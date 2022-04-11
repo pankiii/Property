@@ -1,0 +1,48 @@
+<div class="row">
+<div class="col-4">
+<div class="card" style="width: 24rem">
+  <div class="card-header">Property Details</div>
+  <div class="card-body">
+    <img *ngIf="property.Image" class="card-img-top" src="{{property.Image}}" />
+    <img *ngIf="!property.Image"
+    class="card-img-top"
+    src="../../../assets/car.jpg"
+    alt="Card image cap"
+  />
+    <h1 class="name-color">{{property.Name}}</h1>
+   <strong>
+    <p>{{property.BHK}} BHK {{property.PType}} @ {{property.Price}}</p>
+    <p>in {{property.City}}</p>
+    <hr>
+    <p>Build Area: {{property.BuiltArea}} Sqft</p>
+    <p>Furnished Type: {{property.FType}}</p>
+   </strong>
+  </div>
+</div>
+</div>
+<div class="col-8">
+  <div class="card">
+   <div class="card-body">
+    <tabset>
+      <tab heading="Overview" id="tab1">
+          <div class="card-body">
+            <p>ProjectName: {{property.Name}}</p>
+            <p>BHK: {{property.PType}}</p>
+            <p>Price: {{property.Price}}</p>
+            <p>City: {{property.City}}</p>
+            <p>Build Area: {{property.BuiltArea}} Sqft</p>
+            <p>Furnished Type: {{property.FType}}</p>
+          </div>
+      </tab>
+      <tab heading="Address">Address</tab>
+      <tab heading="Photos">
+        <ngx-gallery [options]="galleryOptions"
+        [images]="galleryImages"
+        class="ngx-gallery mt-2"></ngx-gallery>
+      </tab>
+      <tab heading="Contact">Contact</tab>
+    </tabset>
+   </div>
+  </div>
+</div>
+</div>

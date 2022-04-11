@@ -1,0 +1,26 @@
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.photo-control {
+  min-height: 300px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px dashed black;
+  margin: 5px;
+}
+.mr-5{
+  margin-right: 0.5rem;
+}
+.btn-sell {
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.btn-rent {
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.btn-group > label[ng-reflect-btn-radio] {
+  padding: 0 15px;
+  line-height: 30px;
+}

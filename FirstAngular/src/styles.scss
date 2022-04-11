@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+.mr10{
+  margin-right: 10px;
+}
+.ng-invalid.ng-touched{
+border-color: red;
+}
+.error{
+  color: red;
+}
+.form-group{
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}

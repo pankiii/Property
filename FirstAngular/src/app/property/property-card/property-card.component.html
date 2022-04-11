@@ -1,34 +1,33 @@
-<div class="row justify-content-evenly">
-  <div class="card align-items-center shadow-lg " style="width: 18rem;">
-    <img src="../../../assets/home.png" height="200" width="200">
-    <div class="card-body">
-    <h2>{{ propertyData.name }}</h2>
-    <h2>{{ propertyData.type }}</h2>
-    <h3>{{ propertyData.price }}</h3>
+<div class="card col-sm-3" style="width: 18rem">
+  <div class="imgDiv">
+    <img *ngIf="propertyData.Image"
+      class="card-img-top"
+      src="{{ propertyData.Image }}"
+      alt="Card image cap"
+    />
+    <img *ngIf="!propertyData.Image"
+    class="card-img-top"
+    src="../../../assets/car.jpg"
+    alt="Card image cap"
+  />
+    <ul class="list-inline text-center img-icons animate">
+      <li class="list-inline-item"><button class="btn btn-dark" routerLink="/property-detail/{{propertyData.Id}}"><i class="fa fa-pen-to-square"></i></button></li>
+      <li class="list-inline-item"><button class="btn btn-dark"><i class="fa fa-address-book"></i></button></li>
+    </ul>
   </div>
-  </div>
-  <div class="card align-items-center shadow-lg " style="width: 18rem;">
-    <img src="../../../assets/home.png" height="200" width="200">
-    <div class="card-body">
-    <h2>{{ propertyData.name }}</h2>
-    <h2>{{ propertyData.type }}</h2>
-    <h3>{{ propertyData.price }}</h3>
-  </div>
-  </div>
-  <div class="card align-items-center shadow-lg " style="width: 18rem;">
-    <img src="../../../assets/home.png" height="200" width="200">
-    <div class="card-body">
-    <h2>{{ propertyData.name }}</h2>
-    <h2>{{ propertyData.type }}</h2>
-    <h3>{{ propertyData.price }}</h3>
-  </div>
-  </div>
-  <div class="card align-items-center shadow-lg " style="width: 18rem;">
-    <img src="../../../assets/home.png" height="200" width="200">
-    <div class="card-body">
-    <h2>{{ propertyData.name }}</h2>
-    <h2>{{ propertyData.type }}</h2>
-    <h3>{{ propertyData.price }}</h3>
-  </div>
+  <div class="card-body">
+    <h1 class="mb-0"> {{propertyData.BHK}} BHK {{propertyData.PType}} </h1>
+
+    in {{propertyData.Name}}
+    <span *ngIf="propertyData.Name">,</span>
+    {{propertyData.City}}
+
+    <h6  class="mt-2">{{propertyData.FType}}
+    <span *ngIf="propertyData.FType !== 'Unfurnished'">Furnished</span> | Ready to Move</h6>
+
+    <hr class="mt-0 mb-2">
+
+    <h6 class="mb-0">Price: <span class>{{propertyData.Price}} USD.</span> |
+      Area:  <span>{{propertyData.BuiltArea}} Sq Ft </span> </h6>
   </div>
 </div>

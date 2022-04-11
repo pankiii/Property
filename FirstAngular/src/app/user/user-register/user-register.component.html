@@ -1,0 +1,52 @@
+<div class="card col-6 m-auto">
+<div class="card-header">
+  Register
+</div>
+<div class="card-body">
+<form [formGroup]="registrationForm"(ngSubmit)="onSubmit()">
+  <div class="form-group col-12">
+    <label for="name">Name</label>
+    <input type="text" name="name" class="form-control" formControlName="name">
+    <div *ngIf="!name.valid && (name.touched || userSubmitted)" class="error">
+      <span *ngIf="name.hasError('required') ">This field is required</span>
+    </div>
+</div>
+<div class="form-group col-12">
+  <label for="email">Email</label>
+  <input type="email" name="email" class="form-control" formControlName="email">
+  <div *ngIf="!email.valid && (email.touched || userSubmitted)" class="error">
+    <span *ngIf="email.hasError('required')">This field is required</span>
+    <span *ngIf="email.hasError('email')">Enter Valid Email</span>
+  </div>
+</div>
+<div class="form-group col-12">
+  <label for="password">Password</label>
+  <input type="password" name="password" class="form-control" formControlName="password">
+  <div class="error" *ngIf="!password.valid && (password.touched || userSubmitted)">
+<span *ngIf="password.hasError('required')">This field is required</span>
+<span *ngIf="password.hasError('minlength')">minlength 8 char</span>
+  </div>
+</div>
+<div class="form-group col-12">
+  <label for="confirmpsd">Confirm Password</label>
+  <input type="password" name="confirmpsd" class="form-control" formControlName="confirmpsd">
+  <div class="error" *ngIf="!confirmPassword.valid && (confirmPassword.touched || userSubmitted)">
+<span *ngIf="confirmPassword.hasError('required')">This field is required</span>
+<span *ngIf="registrationForm.hasError('notMatched')">Password Not Matched</span>
+  </div>
+</div>
+<div class="form-group col-12">
+  <label for="mobile">Mobile</label>
+  <input type="tel" name="mobile" class="form-control" formControlName="mobile">
+  <div class="error" *ngIf="!mobile.valid && (mobile.touched || userSubmitted)">
+    <span *ngIf="mobile.hasError('required')">This field is required</span>
+    <span *ngIf="mobile.hasError('maxlength')">maxlength 10 chars</span>
+      </div>
+</div>
+<div class="form-group col-12 mt-2">
+  <button type="submit" class="btn btn-dark mr10">Register</button>
+  <button type="reset" class="btn btn-dark">Cancel</button>
+</div>
+</form>
+</div>
+</div>

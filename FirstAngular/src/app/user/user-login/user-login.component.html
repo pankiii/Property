@@ -1,0 +1,27 @@
+<div class="card col-6 m-auto">
+  <div class="card-header">
+    Login
+  </div>
+  <div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="onSave()">
+     <div class="form-group col-12">
+       <label for="name">Name</label>
+       <input type="text" name="name" class="form-control" formControlName="name">
+       <div class="error" *ngIf="!name.valid && name.touched">
+         <span *ngIf="name.hasError('required')">This field is required</span>
+       </div>
+     </div>
+     <div class="form-group col-12">
+      <label for="password">Password</label>
+      <input type="password" name="password" class="form-control" formControlName="password">
+      <div class="error" *ngIf="!password.valid && password.touched">
+        <span *ngIf="password.hasError('required')">This field is required</span>
+      </div>
+    </div>
+    <div class="form-group col-12 mt-2">
+      <button [disabled]="!loginForm.valid" type="submit" class="btn btn-dark mr10">Save</button>
+      <button type="reset" class="btn btn-dark">Cancel</button>
+    </div>
+    </form>
+  </div>
+</div>
